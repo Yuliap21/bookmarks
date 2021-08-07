@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 
 //Create
-router.post('/api/bookmarks', (req, res)=> {
+router.post('/', async (req, res)=> {
   try{
       const createdBookmark = await Bookmark.create(req.body)
       res.status(200).json(createdBookmark)
@@ -15,25 +15,48 @@ router.post('/api/bookmarks', (req, res)=> {
   })
 
 // Read
+router.get('/', async (req, res) => {
+      try{
+        const foundBookmarks = await Bookmark.find({})
+        res.status(200).json(foundBookmarks)
+      }catch(error){
+        console.error(error);
+        res.status(400).json({ message: error.message });
+      }
+    })
 
-router.get('/api/bookmarks', (req, res) => {
-  res.json({ "route": 'index' })
-})
-
-app.get('/api/bookmarks/:id', (req, res) => {
-  res.json({ "route": 'show' })
-})
-
-
+    /* Show */
+      router.get('/:id', async (req, res) => {
+        try{
+          const foundBookmark = await Bookmark.findById(req.params.id)
+          res.status(200).json(foundBookmark)
+        }catch(error){
+          console.error(error);
+          res.status(400).json({ message: error.message });
+        }
+      })
 // Update
 
-app.put('/api/bookmarks/:id', (req, res) => {
-  res.json(req.body)
-})
+router.put('/:id', async (req, res) => {
+    try {
+      const updatedBookmark = await Bookmark.findByIdAndUpdate(req.params.id, req.body, { new: true })
+      res.status(200).json(updatedBookmark)
+    }catch(error){
+      console.error(error);
+      res.status(400).json({ message: error.message })
+    }
+  })
 
 
 // Delete
 
-app.delete('/api/bookmarks/:id', (req, res) => {
-  res.json({ "route": 'delete' })
+router.delete('/:id', async (req, res) => {
+  try{
+    const deletedBookmark = await Bookmark.findByIdAndDelete(req.params.id);
+    res.status(200).json(deletedBookmark);
+  } catch(error){
+    console.error(error);
+    res.status(400).json({ message: error.message})
+  }
 })
+module.exports = router;

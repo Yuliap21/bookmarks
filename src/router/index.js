@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Show from '../pages/Post';
 import routes from './routes';
 const AppRouter = () => {
 	return (
@@ -11,6 +12,7 @@ const AppRouter = () => {
 					<Route
 						key={key}
 						path={path}
+						exact
 						component={() => <Component page={key} />}
 					></Route>
 				))}
@@ -18,5 +20,4 @@ const AppRouter = () => {
 		</Router>
 	);
 };
-
 export default AppRouter;
