@@ -23,8 +23,9 @@ if (process.env.NODE_ENV !== 'development'){
   app.use(express.static('public'))
 }
 
-/* Controller Goes Here Remove the tes*/
-app.use('api/bookmarks', bookmarkController);
+/* Controller Goes Here Remove the test*/
+app.use('/api/bookmarks',bookmarkController);
+
 /* Controller Ends here */
 //LISTENER
 
