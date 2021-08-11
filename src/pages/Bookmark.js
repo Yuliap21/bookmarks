@@ -38,7 +38,6 @@ export default function Bookmark(props) {
 	// };
 
 	// update ///
-
 	const handleDelete = async e => {
 		try {
 			const response = await fetch(`/api/bookmarks/${props.match.params.id}`, {
@@ -54,6 +53,7 @@ export default function Bookmark(props) {
 			window.location.assign('/');
 		}
 	};
+
 	return (
 		<div className="ShowPage">
 			{Object.keys(bookmark).length ? (
@@ -66,12 +66,34 @@ export default function Bookmark(props) {
 				<h1> Loading...</h1>
 			)}
 			{/*<form
-				style={{ display: 'flex', flexDirection: 'column' }}
-				onSubmit={handleUpdate}
-			>
-				{' '}
-			</form>
+        style={{ display: 'flex', flexDirection: 'column' }}
+        onSubmit={handleUpdate}
+      >
+        {' '}
+      </form>
       */}
 		</div>
 	);
 }
+
+// 	return (
+// 		<div className="ShowPage">
+// 			{Object.keys(bookmark).length ? (
+// 				<>
+// 					<h3>{bookmark.title}</h3>
+// 					<p>{bookmark.url}</p>
+// 					<button onClick={handleDelete}>DELETE ME</button>
+// 				</>
+// 			) : (
+// 				<h1> Loading...</h1>
+// 			)}
+// 			{/*<form
+// 				style={{ display: 'flex', flexDirection: 'column' }}
+// 				onSubmit={handleUpdate}
+// 			>
+// 				{' '}
+// 			</form>
+//       */}
+// 		</div>
+// 	);
+// }

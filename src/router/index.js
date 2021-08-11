@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../components/NavBar';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import routes from './routes';
+import Bookmark from '../pages/Bookmark';
 
 const AppRouter = props => {
 	return (
@@ -16,6 +17,10 @@ const AppRouter = props => {
 						component={props => <Component page={key} {...props} />}
 					></Route>
 				))}
+				<Route
+					path={'/:id'}
+					component={props => <Bookmark page={key} {...props} />}
+				></Route>
 			</Switch>
 		</Router>
 	);

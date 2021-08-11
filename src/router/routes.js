@@ -3,8 +3,8 @@ import App from '../pages/App';
 import About from '../pages/About';
 import Home from '../pages/Home';
 import Contact from '../pages/Contact';
-import Bookmark from '../pages/Bookmark';
 
+import Bookmarks from '../pages/Bookmarks';
 const routes = [
 	// { Component: Bookmarks, key: 'Bookmarks', path: '/bookmarks' },
 	{
@@ -12,24 +12,16 @@ const routes = [
 		key: 'Contact',
 		path: '/contact'
 	},
-	{
-		Component: Home,
-		key: 'Home',
-		path: '/home'
-	},
+
 	{
 		Component: About,
 		key: 'About',
 		path: '/about'
 	},
+
 	{
-		Component: Bookmark,
-		key: 'Bookmark',
-		path: '/:id'
-	},
-	{
-		Component: App,
-		key: 'App',
+		Component: Bookmarks,
+		key: 'HomePage',
 		path: '/'
 	}
 ];
