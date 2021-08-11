@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-export default function Show(props) {
+
+export default function Bookmark(props) {
 	const [bookmark, setBookmark] = useState({});
 	const titleInput = useRef(null); // doc.qs('input#title')
 	const urlInput = useRef(null); // doc.qs('input#body')
@@ -7,7 +8,8 @@ export default function Show(props) {
 	useEffect(() => {
 		(async () => {
 			try {
-				const response = await fetch(`/api/bookmarks/`);
+				console.log(props);
+				const response = await fetch(`/api/bookmarks/${props.match.params.id}`);
 				const data = await response.json();
 				setBookmark(data);
 			} catch (error) {
@@ -15,6 +17,27 @@ export default function Show(props) {
 			}
 		})();
 	}, []);
+
+	// const addBookmark = async e => {
+	// 	try {
+	// 		const response = await fetch('/api/bookmarks/', {
+	// 			method: 'POST',
+	// 			headers: {
+	// 				'Content-Type': 'application/json'
+	// 			},
+	// 			body: JSON.stringify({
+	// 				title: titleInput.current.value,
+	// 				url: urlInput.current.value
+	// 			})
+	// 		});
+	// 		const data = await response.json();
+	// 		setBookmark(data);
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	}
+	// };
+
+	// update ///
 
 	const handleDelete = async e => {
 		try {
@@ -42,6 +65,13 @@ export default function Show(props) {
 			) : (
 				<h1> Loading...</h1>
 			)}
+			{/*<form
+				style={{ display: 'flex', flexDirection: 'column' }}
+				onSubmit={handleUpdate}
+			>
+				{' '}
+			</form>
+      */}
 		</div>
 	);
 }

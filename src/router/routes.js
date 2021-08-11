@@ -3,9 +3,10 @@ import App from '../pages/App';
 import About from '../pages/About';
 import Home from '../pages/Home';
 import Contact from '../pages/Contact';
-import Bookmarks from '../pages/Post';
+import Bookmark from '../pages/Bookmark';
+
 const routes = [
-	{ Component: Bookmarks, key: 'Bookmarks', path: '/bookmarks' },
+	// { Component: Bookmarks, key: 'Bookmarks', path: '/bookmarks' },
 	{
 		Component: Contact,
 		key: 'Contact',
@@ -20,6 +21,11 @@ const routes = [
 		Component: About,
 		key: 'About',
 		path: '/about'
+	},
+	{
+		Component: Bookmark,
+		key: 'Bookmark',
+		path: '/:id'
 	},
 	{
 		Component: App,
