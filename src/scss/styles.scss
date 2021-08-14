@@ -2,18 +2,44 @@
 @import "reset";
 @import "grid";
 
+
+// $nav-link-color: white;
+// $nav-link-hover-color: rgba(0, 180, 240, 1);
+//
+// .nav{
+//   .nav-link{
+//     color: $nav-link-color;
+//   }
+//   .nav-link:hover{
+//     color: $nav-link-hover-color;
+//   }
+// }
+//
+// .header{
+//   font-family: 'Handlee', cursive;
+// }
+
 body {
   font-size: 16px;
+  font-family: 'Handlee', fantasy;
+  background-color: pink;
 }
 
 .NavBar {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: green;
+}
+
+.Router.Consumer{
+  display: flex;
+  color: red;
 }
 
 .HomePage {
+
+  background-color: yellow;
 
 }
 

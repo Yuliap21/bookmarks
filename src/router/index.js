@@ -8,6 +8,7 @@ const AppRouter = props => {
 	return (
 		<Router>
 			<NavBar routes={routes} />
+			<Bookmark />
 			<Switch>
 				{routes.map(({ Component, key, path }) => (
 					<Route
