@@ -1,23 +1,31 @@
-// import { useState } from "react";
-// export default function NameForm(props) {
-//   const [name, setName] = useState("");
-//   // handleChange Event
-//   const handleChange = (evt) => {
-//     setName(evt.target.value);
-//   };
-//   // handleSubmission Event
-//   const handleSubmit = (evt) => {
-//     evt.preventDefault();
-//     alert(`We have submitted ${name}`);
-//     setName("");
-//   };
-//   return (
-//     <>
-//       <form onSubmit={handleSubmit}>
-//         <input type="text" value={name} onChange={handleChange} />
-//         <input type="submit" value="SUBMIT" />
-//       </form>
-//       <h1>{name}</h1>
-//     </>
-//   );
-// }
+import React from 'react';
+import { useState } from "react";
+export default ({handleSubmit}) => {
+  const [bookmark, setBookmark] = useState("");
+  // handleChange Event
+  const handleChange = e => {
+    handleUpdate(e.target.value);
+  };
+  // handleSubmission Event
+  const handleSubmit = e => {
+    e.preventDefault();
+  handleSubmit(bookmark);
+  };
+
+  return (
+      <form onSubmit={handleForm}>
+      <label>
+      {' '}
+      Title:{' '}
+        <input type="text" value={bookmark} onChange={handleChange} id="title" />
+        </label>
+        <label>
+        {' '}
+        URL:{' '}
+        <input type="text" value={bookmark} onChange={handleChange} id="url" />
+        </label>
+      </form>
+
+
+  );
+}

@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
 
+// useEffect(() => {
+// 	(async () => {
+// 		try {
+// 			const response = await fetch('/api/bookmarks');
+// 			const data = await response.json();
+// 			setBookmarks(data);
+// 		} catch (error) {
+// 			console.error(error);
+// 		}
+// 	})();
+// }, []);
+
 export default function Home(props) {
 	const addBookmark = async e => {
 		try {
