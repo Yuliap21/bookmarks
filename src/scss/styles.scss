@@ -2,6 +2,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  color: red;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -10,6 +11,7 @@ body {
 .footer {
   padding-right: 15px;
   padding-left: 15px;
+  color: red;
 }
 
 /* Custom page header */
@@ -71,9 +73,11 @@ body {
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
+    color: red;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+    color: red;
   }
 }
